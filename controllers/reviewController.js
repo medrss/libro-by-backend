@@ -26,7 +26,7 @@ const getReviewsByBook = async (req, res) => {
     console.log("📚 Ищем отзывы для книги ID:", bookId);
     const reviews = await Review.findAllByBook(bookId);
 
-    const SERVER_URL = process.env.SERVER_URL || "http://localhost:3000"; // ✅ Убедимся, что URL сервера загружается
+    const SERVER_URL = process.env.SERVER_URL || "https://libro-by-backend.onrender.com"; // ✅ Убедимся, что URL сервера загружается
 
     const formattedReviews = reviews.map((review) => ({
       id: review.id,
