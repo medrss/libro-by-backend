@@ -81,7 +81,7 @@ const createReview = async (req, res) => {
   
       console.log("✅ Отзыв успешно создан! ID:", newReview.id);
   
-      const SERVER_URL = process.env.SERVER_URL || "http://localhost:3000"; // ✅ Фикс `undefined`
+      const SERVER_URL = process.env.SERVER_URL; // ✅ Фикс `undefined`
 
       const avatarPath = profile_picture ? `${SERVER_URL}/uploads/avatars/${profile_picture}` : null;
       const imagePath = newReview.image ? `${SERVER_URL}/uploads/reviews/${newReview.image}` : null;
